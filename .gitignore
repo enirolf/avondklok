@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing
+.tox/
+
+# Environment
+.env
+deploy_key
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
