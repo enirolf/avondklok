@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   # test the bot & check code style etc
