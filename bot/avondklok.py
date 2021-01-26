@@ -23,9 +23,8 @@ def tweet_morning(api):
 
 
 def main():
-    """
-    Driver method
-    """
+    '''Driver method'''
+
     api = create_api()
 
     schedule.every().day.at("21:00").do(tweet_evening, api=api)

@@ -16,9 +16,7 @@ logger = logging.getLogger()
 
 
 def create_api() -> tweepy.models.User:
-    """
-    Create a new twitter API instance for sending and receiving tweets
-    """
+    '''Create a new twitter API instance for sending and receiving tweets'''
     consumer_key = os.getenv("CONSUMER_KEY")
     consumer_secret = os.getenv("CONSUMER_SECRET")
     access_token = os.getenv("ACCESS_TOKEN")

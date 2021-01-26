@@ -1,7 +1,7 @@
 from bot.config import create_api
 
 
-# Test whether the API gets created correctly
 def test_create_api():
+    '''Test whether we can use the API'''
     api = create_api()
-    assert api.me().screen_name == "avondkiok"
+    assert api.me().screen_name == "AvondkIok"
