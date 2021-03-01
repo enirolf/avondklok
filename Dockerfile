@@ -30,3 +30,4 @@ COPY test /app/test
 FROM develop as production
 
 COPY bot /app/bot
+COPY gifs /app/gifs
