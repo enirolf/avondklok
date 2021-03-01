@@ -11,10 +11,17 @@ MORNING_TWEETS = [
     "Hop hop naar buiten!",
 ]
 
+def gifs(api):
+    paths = ['../gifs/gif1.gif', '../gifs/gif2.gif', '../gifs/gif3.gif']
+    return [api.media_upload(path).media_id for path in paths]
 
-def tweet_evening(api):
-    tweet = random.choice(EVENING_TWEETS)
-    api.update_status(tweet)
+def tweet_evening(api, gifs):
+    if (random.randint(10) % 2 == 0):
+        tweet = random.choice(EVENING_TWEETS) 
+        api.update_status(tweet)
+    else:
+        tweet = random.choice(gifs)
+        api.update_status(media_ids=[tweet])
 
 
 def tweet_morning(api):
@@ -26,8 +33,9 @@ def main():
     '''Driver method'''
 
     api = create_api()
+    gifs = gifs(api)
 
-    schedule.every().day.at("21:00").do(tweet_evening, api=api)
+    schedule.every().day.at("21:00").do(tweet_evening, api=api, gifs=gifs)
     schedule.every().day.at("04:30").do(tweet_morning, api=api)
 
     while True:
