@@ -13,7 +13,7 @@ MORNING_TWEETS = [
 
 
 def gifs(api):
-    paths = ["../gifs/gif1.gif", "../gifs/gif2.gif", "../gifs/gif3.gif"]
+    paths = ["gifs/gif1.gif", "gifs/gif2.gif", "gifs/gif3.gif"]
     return [api.media_upload(path).media_id for path in paths]
 
 
