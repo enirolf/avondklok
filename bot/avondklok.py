@@ -18,7 +18,7 @@ def gifs(api):
 
 
 def tweet_evening(api, gif_ids):
-    if random.randint(10) % 2 == 0:
+    if random.randint(1, 10) % 2 == 0:
         tweet = random.choice(EVENING_TWEETS)
         api.update_status(tweet)
     else:
