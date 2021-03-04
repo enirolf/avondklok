@@ -2,7 +2,7 @@ import random
 import schedule
 import time
 
-from config import create_api
+from config import create_api, logger
 
 EVENING_TWEETS = ["Naar binnen!!", "Deur dicht!", "Ja, nu!", "✔️", "Bent u binnen?!??"]
 MORNING_TWEETS = [
@@ -21,14 +21,17 @@ def tweet_evening(api, gif_ids):
     if random.randint(1, 10) % 2 == 0:
         tweet = random.choice(EVENING_TWEETS)
         api.update_status(tweet)
+        logger.info(f"Tweet sent with status {tweet}")
     else:
         gif_id = random.choice(gif_ids)
         api.update_status(media_ids=[gif_id])
+        logger.info(f"Tweet sent with gif ID {gif_id}")
 
 
 def tweet_morning(api):
     tweet = random.choice(MORNING_TWEETS)
     api.update_status(tweet)
+    logger.info(f"Tweet sent with status {tweet}")
 
 
 def main():
